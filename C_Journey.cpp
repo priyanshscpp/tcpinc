@@ -42,23 +42,36 @@ void yes() { cout << "YES\n"; }
 void no() { cout << "NO\n"; }
 
 /* clang-format on */
+vll a[100'001];
 
-void namo(){
+double dfs(ll i ,ll p){
+  double v=0, c=0;
+  for(ll j:a[i])
+        if(j-p){
+          v +=dfs(j,i),c++;
 
+        }
+        return c?v/c+1:0;
+      
+      
+      //focsu like iitians just do work ...concentrate  codefroces linux bss 3 months gtihub bhi sorted na
+      }
 
-}
 
 /* Main()  function */
 int main()
 {
 
-   ll t;
-     cin>>t;
-while(t--){
-  namo();
-
+   ll n;
+   cin>>n;
+   for(ll i=1; i<n; i++){
+    ll u,v; cin>>u>>v;
+  a[u].push_back(v);
+  b[v].push_back(u);
 
 }
+cout<<setprecision(15)<<dfs(1,0);
+
 
     return 0;
 }
