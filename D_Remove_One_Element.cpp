@@ -42,39 +42,55 @@ void yes() { cout << "YES\n"; }
 void no() { cout << "NO\n"; }
 
 /* clang-format on */
-vll a[100'001];
 
-double dfs(ll i ,ll p){
-  double v=0, c=0;
-  for(ll j:a[i])
-        if(j-p){
-          v +=dfs(j,i),c++;
+void namo(){
 
-        }
-        return c?v/c+1:0;
-      
-      
-      //focsu like iitians just do work ...concentrate  codefroces linux and real work
-      
-      }
+
+
+}
 
 
 /* Main()  function */
 int main()
 {
+ll n;
+cin>>n;
+int ans=0;
 
-   ll n;
-   cin>>n;
-   for(ll i=1; i<n; i++){
-    ll u,v; cin>>u>>v;
-  a[u].push_back(v);
-  b[v].push_back(u);
+vll v(n+2);
+int  dp[20005];
+int  d[20005];
+
+for(int i=1;i<=n; i++ ){
+    
+    cin>>v[i];
+dp[i]=1;
+d[i]=1;
+
+
+if(v[i]>v[i-1]){
+    dp[i]=dp[i-1]+1;
+    d[i]=d[i-1]+1;
+}
+
+if(v[i]>v[i-2]){
+    d[i]=max(d[i],dp[i-2]+1);
+
 
 }
-cout<<setprecision(15)<<dfs(1,0);
+
+ ans=max(d[i],ans);
 
 
-    return 0;
+}
+
+cout<<ans<<endl;
+
+
+
+return 0;
+
+   
 }
 
 

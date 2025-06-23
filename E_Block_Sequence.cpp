@@ -42,37 +42,41 @@ void yes() { cout << "YES\n"; }
 void no() { cout << "NO\n"; }
 
 /* clang-format on */
-vll a[100'001];
 
-double dfs(ll i ,ll p){
-  double v=0, c=0;
-  for(ll j:a[i])
-        if(j-p){
-          v +=dfs(j,i),c++;
+void namo(){
+int n;
+cin>>n;
+vll vec(n);
+for(auto &it:vec)cin>>it;
+vll dp(n+1,0);
 
-        }
-        return c?v/c+1:0;
-      
-      
-      //focsu like iitians just do work ...concentrate  codefroces linux and real work
-      
-      }
+for(int i=n-1; i>=0; i--){
+    int len=vec[i];
+    if(i+len<n){
+        dp[i]= min(dp[i+1]+1,dp[i+len+1]);
+        
+    }
+    else{
+        dp[i]= dp[i+1]+1;
 
+    }
+}
+cout<<dp[0]<<endl;
+
+
+}
 
 /* Main()  function */
 int main()
 {
 
-   ll n;
-   cin>>n;
-   for(ll i=1; i<n; i++){
-    ll u,v; cin>>u>>v;
-  a[u].push_back(v);
-  b[v].push_back(u);
+   ll t;
+     cin>>t;
+while(t--){
+  namo();
+
 
 }
-cout<<setprecision(15)<<dfs(1,0);
-
 
     return 0;
 }
