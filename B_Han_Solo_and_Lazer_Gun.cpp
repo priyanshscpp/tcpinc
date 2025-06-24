@@ -12,7 +12,7 @@ using namespace std;
 #define vll vector<long long>
 #define mii map<int, int>
 #define si set<int>
-#define sc set<char>
+
 
 /* FUNCTIONS */
 #define f(i, s, e) for (long long int i = s; i < e; i++)
