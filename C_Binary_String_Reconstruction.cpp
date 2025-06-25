@@ -5,16 +5,14 @@ using namespace std;
 /* Code written by Priyanshu Yadav  */
 
 /* TYPES  */
-
 #define ll long long
 #define pii pair<int, int>
 #define pll pair<long long, long long>
 #define vi vector<int>
 #define vll vector<long long>
 #define mii map<int, int>
-
 #define si set<int>
-
+#define sc set<char>
 
 /* FUNCTIONS */
 #define f(i, s, e) for (long long int i = s; i < e; i++)
@@ -54,23 +52,13 @@ void namo(){
 int main()
 {
 
-  double n,x,y;
-  cin>>n>>x>>y;
-  set<double > m;
-int b=0;
+   ll t;
+     cin>>t;
+while(t--){
+  namo();
 
-  for(int i=0; i<n; i++){
-    double x1,y1;
-    cin>>x1>>y1;
-    if(x1 - x !=0){
-       m.insert((y1-y)/(x1-x));
 
-    }else{
-        b=1; //vertical line
-    }
-
-  }
-  cout<<m.size()+b<<endl;
+}
 
     return 0;
 }
