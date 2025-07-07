@@ -42,27 +42,38 @@ void yes() { cout << "YES\n"; }
 void no() { cout << "NO\n"; }
 
 /* clang-format on */
-
+string s,t;
+int pref[200000],suf[200000];
 void namo(){
-
-
+	ios::sync_with_stdio(false),cin.tie(0);
+	int n,m,i,j,ans=0;
+	cin>>n>>m>>s>>t;
+	j=0;
+	for(i=0;i<m;i++)
+	{
+		while(j<n&&s[j]!=t[i])j++;
+		pref[i]=j;
+		j++;
+	}
+	j=n-1;
+	for(i=m-1;i>-1;i--)
+	{
+		while(j>-1&&s[j]!=t[i])j--;
+		suf[i]=j;
+		j--;
+	}
+	for(i=0;i<m-1;i++)ans=max(ans,suf[i+1]-pref[i]);
+	cout<<ans<<'\n';
 }
-
 /* Main()  function */
 int main()
 {
 
-
-
-   ll t;
-     cin>>t;
-while(t--){
   namo();
 
 
-}
 
     return 0;
-}s
+}
 
 
