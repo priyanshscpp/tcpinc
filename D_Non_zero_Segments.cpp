@@ -43,40 +43,37 @@ void no() { cout << "NO\n"; }
 
 /* clang-format on */
 
-void namo(){
-  int n, t0; cin >> n >> t0;
-  int left, right, pret = 0; left = right = t0;
-  bool ok = true;
-  for (int i = 0; i < n; i++) {
-    int t, low, high; cin >> t >> low >> high;
-    int d = t - pret;
-    int nl = max(left - d, low);
-    int nr = min(right + d, high);
-    if (nl > nr) {
-      ok = false;
-    }
-    left = nl; right = nr;
-    
-    pret = t;
-  }
-  cout << (ok ? "YES" : "NO") << "\n";
-
-}
 
 /* Main()  function */
 int main()
 {
 
-   ll t;
-     cin>>t;
-while(t--){
-  namo();
+    ll n;
+    ll ans =0 ,sum=0;
 
+cin>>n;
+
+map <ll ,bool> mapp;
+mapp[0]=1;
+for(int i=1; i<=n; i++){
+    int x;
+    cin>>x;
+    sum +=x;
+    if(mapp[sum]){
+        ans++;
+        sum=x;
+        mapp.clear();
+        mapp[0]=1;
+
+    }
+    mapp[sum]=1;
 
 }
+cout<<ans;
+
+
 
     return 0;
 }
-
 
 

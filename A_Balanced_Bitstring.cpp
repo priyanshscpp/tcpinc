@@ -44,22 +44,43 @@ void no() { cout << "NO\n"; }
 /* clang-format on */
 
 void namo(){
-  int n, t0; cin >> n >> t0;
-  int left, right, pret = 0; left = right = t0;
-  bool ok = true;
-  for (int i = 0; i < n; i++) {
-    int t, low, high; cin >> t >> low >> high;
-    int d = t - pret;
-    int nl = max(left - d, low);
-    int nr = min(right + d, high);
-    if (nl > nr) {
-      ok = false;
-    }
-    left = nl; right = nr;
-    
-    pret = t;
-  }
-  cout << (ok ? "YES" : "NO") << "\n";
+		int n,k;
+		cin>>n>>k;
+		string s;
+		cin>>s;
+ 
+		int z=0,o=0;
+ 
+		int flag=0;
+ 
+		for(int i=0; i<k; i++){
+			int temp=-1;
+			for(int j=i; j<n; j+=k){
+				if(s[j]!='?'){
+					if(temp!=-1 and s[j]-'0'!=temp){
+                       flag=1;
+                       break;
+					}
+					temp=s[j]-'0';
+				}
+ 
+ 
+			}
+			if(temp!=-1){
+				(temp==0 ? z:o)++;
+			}
+ 
+		}
+ 
+		if(max(z,o)>k/2){
+			flag=1;
+		}
+ 
+		if(flag==0){
+			cout<<"YES"<<"\n";
+		}else{
+			cout<<"NO"<<"\n";
+		}
 
 }
 
@@ -77,6 +98,5 @@ while(t--){
 
     return 0;
 }
-
 
 
