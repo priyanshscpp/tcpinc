@@ -44,28 +44,31 @@ void no() { cout << "NO\n"; }
 /* clang-format on */
 
 void namo(){
- ll n,k,z;
- cin>>n>>k>>z;
- vll arr(n);
- for(int i=0; i<n; i++){
-    cin>>arr[i];
- }
+ll n,N;
+set<int >s,d;
+cin>>n;
+while(n--){
+    cin>>N;
+    s.insert(N);
 
- int ans=0;
- for(int t=0; t<=z; t++){
-    if(k-2*t>=0){
-        int mx=0, cnt=0;
-        for(int i=0; i<=k-2*t; i++){
-            mx =max (mx,arr[i]+ arr[i+1]);
-            cnt +=arr[i];
+}
+N= (ll)* (s.begin())*(*(s.rbegin()));
 
-        }
-        ans=max(ans,cnt+mx*t);
-        
+for(n=2; 1LL*n*n<=N; n++){
+    if(N%n==0){
+        d.insert(n);
+        d.insert(N/n);
+
     }
- }
- cout<<ans<<endl;
- 
+}
+
+if(d==s)cout<<N
+;
+else cout<<-1<<endl;
+
+cout<<endl;
+
+
 }
 
 /* Main()  function */
@@ -83,4 +86,4 @@ while(t--){
     return 0;
 }
 
- 
+
