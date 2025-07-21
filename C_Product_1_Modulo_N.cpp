@@ -3,6 +3,7 @@ using namespace std;
       
 /* OM NAMO NARAYANA */
 /* Code written by Priyanshu Yadav  */
+/* Operating System : Ubuntu LTS 24.04  */
 
 /* TYPES  */
 #define ll long long
@@ -52,13 +53,19 @@ void namo(){
 int main()
 {
 
-   ll t;
-     cin>>t;
-while(t--){
-  namo();
 
+    ll n;
+    cin>>n;
+    vll a;
 
-}
+    ll ans=1;
+    for(ll i=1; i<n; i++){
+        if(__gcd(i,n)==1) (ans *=i)%=n, a.push_back(i);
+
+    }
+    if(ans !=1)a.pop_back();
+    cout<<a.size()<<endl;
+    for(auto v:a)cout<<v<<" ";
 
     return 0;
 }
