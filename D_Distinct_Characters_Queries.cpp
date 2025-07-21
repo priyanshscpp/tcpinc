@@ -62,6 +62,7 @@ int len= s.size();
 for(int i=0; i<len; i++)
     q[s[i]-'a'].insert(i+1);
 
+  
 for(cin>>n; n--; ){
     cin>>x;
     if(x==1){
