@@ -65,6 +65,8 @@ ll helper(int index, int used_k)
 	ans1 = max(ans1, helper(index + 1, used_k));
 	dp[index][used_k] = ans1;
 	return ans1;
+
+    //cehck it for dp 
 }
 void namo(){
     cin>>n>>m>>k;
