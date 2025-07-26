@@ -46,22 +46,38 @@ void no() { cout << "NO\n"; }
 
 void namo(){
 
+
 }
 
 /* Main()  function */
 int main()
 {
-int a,g,i,j,n,v[1<<18];
-for(cin>>n; cin>>n; cout<<a<<endl){
-    for(i=a=0; i<n; i++)
-    cin>>v[i];
-    for(i=1; i<=n; i++,a+=(g!=1),g=1)
-    if(n%i==0)
-    for(g=0, j=i; j<n; j++)
-    g=gcd(g,v[j]-v[j-i]);
+ll n,m;
+cin>>n>>m;
+ll mul=1;
+vll vec(n+1);
+
+if(n>m)cout<<"0"<<endl;
+else{
+
+for(ll i=1; i<=n; i++){
+    cin>>vec[i];
 
 }
-  
+
+for(ll i=1; i<=n; i++){
+    for(int j=1; j<i; j++){
+    mul =(mul*abs(vec[i]-vec[j]))%m;
+    }
+}
+cout<<mul%m<<endl;
+
+}
+
+
+
+
+    return 0;
 }
 
 
