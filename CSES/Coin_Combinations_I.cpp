@@ -25,7 +25,8 @@ int main(){
            dp[i+c[j]]=(dp[i+c[j]]+ dp[i])% MOD;
 
 
-    cout<<dp[x]<<endl;
+
+    cout<<dp[x]<<endl;//printf the code 
 
 
     return 0;
