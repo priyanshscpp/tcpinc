@@ -43,30 +43,24 @@ void yes() { cout << "YES\n"; }
 void no() { cout << "NO\n"; }
 
 /* clang-format on */
-
-void namo(){
-    int x,n,m;
-    
-		cin>>x>>n>>m;
-		while(n--&&x>20)x=x/2+10;
-		if(x<=10*m)cout<<"YES"<<'\n';
-		else cout<<"NO"<<'\n';
-
-}
+int n,h,l,r,x,dp[2001][2001],sum,ans;
 
 /* Main()  function */
 int main()
 {
-
-   ll t;
-   
-     cin>>t;
-while(t--){
-  namo();
-
-
+cin>>n>>h>>l>>r;
+for (int i=1;i<=n;i++)
+{
+cin>>x;
+sum+=x;
+for (int j=0;j<=i;j++)
+{
+dp[i][j]=max(dp[i-1][j],dp[i-1][j-1]);
+if (((sum-j)%h)<=r && ((sum-j)%h)>=l) dp[i][j]++;
+if (i==n) ans=max(ans,dp[i][j]);
 }
-
+}
+cout<<ans;
     return 0;
 }
 
