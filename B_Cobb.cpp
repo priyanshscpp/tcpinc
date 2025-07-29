@@ -56,7 +56,6 @@ void namo(){
 				ans=max(ans,i*j-k*(a[i]|a[j]));
 			}
 		}
-		cout<<ans<<"\n";
 }
 
 /* Main()  function */
