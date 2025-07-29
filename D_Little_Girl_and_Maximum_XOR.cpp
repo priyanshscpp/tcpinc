@@ -62,7 +62,8 @@ j=__bit_ceil(j) - 1;
 
 cout<<j<<endl;
 
-    return 0;
+//return 0;
+
 }
 
 
