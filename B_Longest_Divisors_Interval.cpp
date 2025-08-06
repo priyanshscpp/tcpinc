@@ -43,25 +43,13 @@ void yes() { cout << "YES\n"; }
 void no() { cout << "NO\n"; }
 
 /* clang-format on */
-const int N=5e6+5;
-typedef pair<int,int> PII;
-const int mod=998244353;
-const int inf=1e9;
+
 void namo(){
-	int n,k;cin>>n>>k;
-	vector<int>pre(2*k+2,0),v(n);
-	for(int i=0;i<n;i++)cin>>v[i];
-	for(int i=0;i<n/2;i++){
-		pre[min(v[i],v[n-1-i])+1]+=1;
-		pre[max(v[i],v[n-1-i])+k+1]-=1;
-		pre[v[i]+v[n-i-1]]+=1;
-		pre[v[i]+v[n-i-1]+1]-=1;\
-	}
-	for(int i=1;i<pre.size();i++){
-		pre[i]+=pre[i-1];
-		//cout<<pre[i]<<" ";
-	}
-	cout<<n-*max_element(pre.begin(),pre.end())<<endl;
+ll n;
+cin>>n;
+int i=1;
+while(n%i==0)i++;
+cout<<i-1<<endl;
 
 }
 
