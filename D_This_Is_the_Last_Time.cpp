@@ -45,25 +45,19 @@ void no() { cout << "NO\n"; }
 /* clang-format on */
 
 void namo(){
-ll x,a=9; cin>>x;
-if(x<=0){cout<<x;}
-else if (x>45) {cout<<"-1"<<endl;
-}
-else {
-    vector<int> v;
-    while(x>a){
-        v.push_back(a);
-        x-=a;
-        a--;
+int  n,k;cin>>n>>k;
+		vector<array<int,3>>v(n);
+		for(auto &[l,r,x]:v)cin>>l>>r>>x;
+		sort(v.begin(),v.end());
+		for(auto [l,r,x]:v){
+			if(l<=k && k<=r){
+				k=max(k,x);
+			}
+		}
+		cout<<k<<endl;    
 
-    }
-    reverse(v.begin(),v.end());
-    cout<<x;
-    for(int i=0; i<v.size(); i++){
-        cout<<v[i];
-    }
-    cout<<endl;
-}
+
+
 }
 
 /* Main()  function */
@@ -80,7 +74,5 @@ while(t--){
 
     return 0;
 }
-
-
 
 
