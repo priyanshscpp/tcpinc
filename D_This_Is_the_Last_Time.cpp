@@ -50,8 +50,7 @@ int  n,k;cin>>n>>k;
 		for(auto &[l,r,x]:v)cin>>l>>r>>x;
 		sort(v.begin(),v.end());
 		for(auto [l,r,x]:v){
-			if(l<=k && k<=r){
-				k=max(k,x);
+			
 			}
 		}
 		cout<<k<<endl;    
