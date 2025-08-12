@@ -53,15 +53,11 @@ void namo(){
 int main()
 {
 
- int a[5][5]={0};
- for(int i=1; i<4; i++){
-    for(int j=1; j<4; j++) cin>>a[i][j];
+   ll t;
+     cin>>t;
+while(t--){
+  namo();
 
- }
- for(int i=1; i<4; i++){
-    for(int j=1; j<4; j++) 
-     cout<<!((a[i][j]+a[i+1][j]+a[i-1][j]+a[i][j+1]+a[i][j-1])%2);
-     cout<<endl;
 
 }
 
