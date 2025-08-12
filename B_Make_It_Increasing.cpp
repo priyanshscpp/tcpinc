@@ -46,7 +46,7 @@ void no() { cout << "NO\n"; }
 
 void namo(){
 
-int n,ans=0;
+// int n,ans=0;
 cin>>n;
 int a[n];
 for(int i=0; i<n; i++)cin>>a[i];
@@ -55,7 +55,6 @@ for(int i=n-2; i>=0; i--){
     while (a[i]>=a[i+1]) a[i]/=2, ans++;
 }
 cout<<ans<<endl;
-
 }
 
 /* Main()  function */
