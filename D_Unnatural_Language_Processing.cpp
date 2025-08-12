@@ -47,7 +47,17 @@ void no() { cout << "NO\n"; }
 void namo(){
 int n;
 cin>>n;
-cout<<n<<endl;
+string s;
+cin>>s;
+for(int i=0; i<n; i++){
+    if(i>1){
+        if(s[i+1]=='a'|| s[i+1]=='e')cout<<".";
+
+    }
+    cout<<s[i];
+
+}
+cout<<endl;
 
 
 }

@@ -43,26 +43,50 @@ void yes() { cout << "YES\n"; }
 void no() { cout << "NO\n"; }
 
 /* clang-format on */
+const int N=2e5+10;
+vector<int> g[N];
+bool c[N];
+int n,dp[N],ans[N];
 
-void namo(){
-int n;
-cin>>n;
-cout<<n<<endl;
+void dfsd(int v,int p){
+    dp[v]=c[v]*2-1;
+    for(auto u: g[v])if(u !=p){
+        dfsd(u,v);
+        if(dp[u]>0){
+            dp[v] +=dp[u];
 
-
+        }
+    }
 }
 
+void dfs(int v, int p){
+	ans[v] = dp[v];
+	if(ans[v] >= 0)
+		ans[v] = max(ans[p], ans[v]);
+	else
+		ans[v] = max(ans[v], ans[p] - 1);
+	for(auto u : g[v]) if(u != p)
+		dfs(u, v);
+}
 /* Main()  function */
 int main()
 {
 
-   ll t;
-     cin>>t;
-while(t--){
-  namo();
+  cin>>n;
+  for(int i=0; i<n; i++) cin>>c[i];
+  for(int i=0; i<n-1; i++){
+    int u,v;
+    cin>>u>>v;
+    u--; v--;
+    g[u].push_back(v);
+    g[v].push_back(u);
 
-
-}
+  }
+  dfsd(0,-1);
+  dfs(0,0);
+  for(int i=0; i<n; i++)
+  cout<<ans[i]<<" ";
+  
 
     return 0;
 }

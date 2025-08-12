@@ -45,13 +45,18 @@ void no() { cout << "NO\n"; }
 /* clang-format on */
 
 void namo(){
-int n;
-cin>>n;
-cout<<n<<endl;
 
+string s;
+cin>>s;
+int n=s.size();
+int res=20;
+for(int i=0; i<n; i++)
+    for(int j=i+1; j<n; j++)
+     if((int(s[j]-'0')+int(s[i]-'0')*10)%25==0)res= min(res,(n-i-2));
+
+cout<<res<<endl;
 
 }
-
 /* Main()  function */
 int main()
 {
