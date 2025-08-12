@@ -44,10 +44,7 @@ void no() { cout << "NO\n"; }
 
 /* clang-format on */
 
-void namo(){
 
-
-}
 
 /* Main()  function */
 int main()
