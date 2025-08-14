@@ -14,3 +14,5 @@ for i in range(int(input())):
         print(1,2)
         print(2,n)
         print(2,n)
+
+        

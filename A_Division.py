@@ -10,3 +10,4 @@ for i in range(int(input())):
         print('Division 3')
     else:
         print('Division 4')
+        

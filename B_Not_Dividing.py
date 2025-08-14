@@ -10,3 +10,4 @@ for t in range(int(input())):
     for i in arr:
         print(i,end=" ")
     print()
+    

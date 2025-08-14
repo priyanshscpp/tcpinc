@@ -57,6 +57,14 @@ int main()
   cin>>a>>b;
   cout<<min(a,b)<<" "<<abs(b-a)/2;
   
+  #include <bits/stdc++.h>
+  using namespace std;
+  #define long long ll
+
+  int main(){
+    cout<<"Enter the code, you want to wrtue in the AI and use it in "<<endl;
+    
+  }
 
     return 0;
 }
