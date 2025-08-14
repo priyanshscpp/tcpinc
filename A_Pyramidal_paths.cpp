@@ -45,33 +45,20 @@ void no() { cout << "NO\n"; }
 /* clang-format on */
 
 void namo(){
-int n,h,m;
-cin>>n>>h>>m;
-int H=__INT_MAX__;
-while(n--){
-    int l,r; cin>>l>>r;
-    int x=(l-h)*60+ (r-m);
-    if(x<0) x+=24*60;
-    H=min(H,x);
-
-}
-cout<<H/60<<" "<<H%60<<endl;
 
 
 }
-
 
 /* Main()  function */
 int main()
 {
-
-   ll t;
-     cin>>t;
-while(t--){
-  namo();
-
-
-}
+ int n; if(!(cin>>n)) return 0;
+    vector<int>a(n); for(int i=0;i<n;i++) cin>>a[i];
+    vector<char> pi(n,1),pd(n,1),si(n,1),sd(n,1);
+    for(int i=1;i<n;i++){ pi[i]=pi[i-1] && a[i-1]<a[i]; pd[i]=pd[i-1] && a[i-1]>a[i]; }
+    for(int i=n-2;i>=0;i--){ si[i]=si[i+1] && a[i]<a[i+1]; sd[i]=sd[i+1] && a[i]>a[i+1]; }
+    for(int k=1;k<=n-2;k++) if((pi[k] && sd[k]) || (pd[k] && si[k])) { cout<<"YES\n"; return 0; }
+    cout<<"NO\n";
 
     return 0;
 }

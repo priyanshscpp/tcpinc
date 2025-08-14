@@ -45,21 +45,19 @@ void no() { cout << "NO\n"; }
 /* clang-format on */
 
 void namo(){
-int n,h,m;
-cin>>n>>h>>m;
-int H=__INT_MAX__;
-while(n--){
-    int l,r; cin>>l>>r;
-    int x=(l-h)*60+ (r-m);
-    if(x<0) x+=24*60;
-    H=min(H,x);
+int a,b,kx,ky,qx,qy;
+cin>>a>>b>>kx>>ky>>qx>>qy;
 
+int t=0;
+int dx[8]={-a,-a,-b,-b,a,a,b,b},dy[8]={b,-b,a,-a,b,-b,a,-a};
+		for(int i=0;i<8;++i){
+			for(int j=0;j<8;++j)if(kx+dx[i]==qx+dx[j]&&ky+dy[i]==qy+dy[j]){
+				++t;
+			}
+		}
+		if(a==b)t/=4;
+		cout<<t<<endl;
 }
-cout<<H/60<<" "<<H%60<<endl;
-
-
-}
-
 
 /* Main()  function */
 int main()

@@ -45,21 +45,12 @@ void no() { cout << "NO\n"; }
 /* clang-format on */
 
 void namo(){
-int n,h,m;
-cin>>n>>h>>m;
-int H=__INT_MAX__;
-while(n--){
-    int l,r; cin>>l>>r;
-    int x=(l-h)*60+ (r-m);
-    if(x<0) x+=24*60;
-    H=min(H,x);
+int n,a,b,c,d;
+cin>>n>>a>>b>>c>>d;
+a *=n , b *=n;
+cout<<((abs(a-c)<= b+d)? "Yes ":"No")<<endl;
 
 }
-cout<<H/60<<" "<<H%60<<endl;
-
-
-}
-
 
 /* Main()  function */
 int main()
