@@ -59,6 +59,7 @@ cout<<H/60<<" "<<H%60<<endl;
 
 
 }
+//visual studio code and pro  coder bro linux machine... arch linux linux pro coder din raat coding bro 
 
 /* Main()  function */
 int main()
